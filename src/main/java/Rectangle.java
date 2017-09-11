@@ -1,5 +1,5 @@
 /**
- * Created by Home on 11.09.2017.
+ * Created by Leonid Shelest on 11.09.2017.
  */
 public class Rectangle implements Shape {
     private double height;

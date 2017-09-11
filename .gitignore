@@ -10,3 +10,11 @@
 *.rar
 *.idea
 *.iml
+.idea/compiler.xml
+.idea/kotlinc.xml
+.idea/libraries/
+.idea/misc.xml
+.idea/modules.xml
+.idea/workspace.xml
+JavaEE_HomeWork2_SHAPES.iml
+

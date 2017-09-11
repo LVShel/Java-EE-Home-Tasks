@@ -20,4 +20,5 @@
         <constructor-arg name="triangle" ref="triangle"/>
         <constructor-arg name="radius" value="12."/>
     </bean>
+
 </beans>

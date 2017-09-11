@@ -16,7 +16,14 @@ public class Rectangle implements Shape {
 
     @Override
     public double calcArea() {
-        return height*width;
+        //In the current application it is defined that rectangle doesn't have any shapes
+        //inside, so it's area remains plain
+        return calcPlainArea();
+    }
+
+    @Override
+    public double calcPlainArea() {
+        return height * width;
     }
 
     public double getHeight() {

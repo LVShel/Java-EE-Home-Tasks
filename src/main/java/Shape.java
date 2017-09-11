@@ -3,7 +3,10 @@
  */
 public interface Shape {
     double calcArea();
-    default void init(){
+
+    double calcPlainArea();
+
+    default void init() {
         System.out.println("I'm a shape " + getClass().getName());
     }
 }

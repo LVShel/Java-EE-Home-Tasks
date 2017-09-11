@@ -11,18 +11,16 @@ public class Main {
         List<Shape> shapes = new ArrayList<>();
         double sumOfAllShapesArea = 0;
         ApplicationContext context = new ClassPathXmlApplicationContext("spring-config.xml");
-        Rectangle rectangle = (Rectangle) context.getBean("rectangle");
-        Triangle triangle = (Triangle) context.getBean("triangle");
-        Circle circle = (Circle) context.getBean("circle");
+        Shape rectangle = (Rectangle) context.getBean("rectangle");
+        Shape triangle = (Triangle) context.getBean("triangle");
+        Shape circle = (Circle) context.getBean("circle");
 
         shapes.add(rectangle);
         shapes.add(triangle);
         shapes.add(circle);
 
-        for(Shape shape : shapes){
-            System.out.println(shape.getClass().getName() + " area is "  + shape.calcArea());
-            sumOfAllShapesArea += shape.calcArea();;
-        }
+        shapes.forEach(s -> System.out.println(s.getClass().getName() + " area is " + s.calcArea()));
+        sumOfAllShapesArea = shapes.stream().mapToDouble(Shape::calcArea).sum();
 
         System.out.println("Sum of all shapes area is " + sumOfAllShapesArea);
         System.out.println("Circle plain area is " + circle.calcPlainArea());

@@ -18,10 +18,10 @@ public class Circle implements Shape {
     public double calcArea() {
         double rectangleArea = rectangle.calcArea();
         double triangleArea = triangle.calcArea();
-        return (PI * Math.pow(radius, 2)) - (rectangleArea + triangleArea);
+        return calcPlainArea() - (rectangleArea + triangleArea);
     }
 
-    public double calcPlainArea(){
+    public double calcPlainArea() {
         return PI * Math.pow(radius, 2);
     }
 

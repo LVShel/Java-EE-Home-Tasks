@@ -17,12 +17,19 @@ public class Triangle implements Shape {
 
     @Override
     public double calcArea() {
+        //As far as there's only a half of rectangle inside the triangle
+        //rectangle's area must be subdivided by 2
         double rectangleArea = rectangle.calcArea() / 2;
+        return calcPlainArea() - rectangleArea;
+    }
+
+    @Override
+    public double calcPlainArea() {
         // Heron's formula:
         // A = SquareRoot(s * (s - sideA) * (s - sideB) * (s - sideC))
         // where s = (sideA + sideB + sideC) / 2
         double s = (sideA + sideB + sideC) / 2;
-        return (Math.sqrt(s * (s - sideA) * (s - sideB) * (s - sideC))) - rectangleArea;
+        return (Math.sqrt(s * (s - sideA) * (s - sideB) * (s - sideC)));
     }
 
     public Rectangle getRectangle() {

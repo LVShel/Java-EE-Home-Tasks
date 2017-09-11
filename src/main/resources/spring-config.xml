@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean id="rectangle" class="Rectangle">
+        <constructor-arg name="height" value="4."/>
+        <constructor-arg name="width" value="5."/>
+    </bean>
+
+    <bean id="triangle" class="Triangle">
+        <constructor-arg name="rectangle" ref="rectangle"/>
+        <constructor-arg name="sideA" value="7."/>
+        <constructor-arg name="sideB" value="8."/>
+        <constructor-arg name="sideC" value="9."/>
+    </bean>
+
+    <bean id="circle" class="Circle">
+        <constructor-arg name="rectangle" ref="rectangle"/>
+        <constructor-arg name="triangle" ref="triangle"/>
+        <constructor-arg name="radius" value="12."/>
+    </bean>
+</beans>

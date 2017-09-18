@@ -1,6 +1,6 @@
-package DAO;
+package dao;
 
-import Mappers.CustomerMapper;
+import mappers.CustomerMapper;
 import entity.Customer;
 import org.springframework.jdbc.core.JdbcTemplate;
 

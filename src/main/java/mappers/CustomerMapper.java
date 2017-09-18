@@ -1,4 +1,4 @@
-package Mappers;
+package mappers;
 
 import entity.Customer;
 import org.springframework.jdbc.core.RowMapper;

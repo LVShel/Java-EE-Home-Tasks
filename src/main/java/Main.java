@@ -1,5 +1,5 @@
-import Service.GoodsService;
-import Service.SalesService;
+import service.GoodsService;
+import service.SalesService;
 import config.SpringConfig;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
@@ -7,7 +7,7 @@ import org.springframework.context.annotation.AnnotationConfigApplicationContext
 /**
  * Created by Home on 12.09.2017.
  */
-public class app {
+public class Main {
     public static void main(String[] args) {
         ApplicationContext context = new AnnotationConfigApplicationContext(SpringConfig.class);
         GoodsService goodsService = context.getBean(GoodsService.class);
@@ -51,7 +51,5 @@ public class app {
 
         System.out.println("Sales by customer's name : ");
         salesService.getByCustomerName("Ben").forEach(System.out::println);
-
-
     }
 }

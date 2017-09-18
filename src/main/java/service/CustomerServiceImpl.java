@@ -1,6 +1,6 @@
-package Service;
+package service;
 
-import DAO.CustomerDao;
+import dao.CustomerDao;
 import entity.Customer;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

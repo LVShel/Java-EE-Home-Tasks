@@ -1,6 +1,6 @@
-package Service;
+package service;
 
-import DAO.ItemDao;
+import dao.ItemDao;
 import entity.Item;
 import org.springframework.beans.factory.annotation.Autowired;
 

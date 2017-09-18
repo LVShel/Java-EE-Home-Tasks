@@ -19,25 +19,25 @@ public class SalesDaoImpl implements SalesDao {
 
     @Override
     public List<Item> getSalesByAge(int age) {
-        String sql = "SELECT * FROM goods LEFT JOIN customers on goods.customerID = customers.id WHERE customers.age = ?";
+        String sql = "SELECT * FROM goods LEFT JOIN customers ON goods.customerID = customers.id WHERE customers.age = ?";
         return jdbcTemplate.query(sql, new ItemMapper(), age);
     }
 
     @Override
     public List<Item> getSalesByAge(int ageFrom, int ageTo) {
-        String sql = "SELECT * FROM goods LEFT JOIN customers on goods.customerID = customers.id WHERE customers.age BETWEEN ? AND ?";
+        String sql = "SELECT * FROM goods LEFT JOIN customers ON goods.customerID = customers.id WHERE customers.age BETWEEN ? AND ?";
         return jdbcTemplate.query(sql, new ItemMapper(), ageFrom, ageTo);
     }
 
     @Override
     public List<Item> getSalesByCustomerID(int id) {
-        String sql = "SELECT * FROM goods LEFT JOIN customers on goods.customerID = customers.id WHERE customers.id = ?";
+        String sql = "SELECT * FROM goods LEFT JOIN customers ON goods.customerID = customers.id WHERE customers.id = ?";
         return jdbcTemplate.query(sql, new ItemMapper(), id);
     }
 
     @Override
     public List<Item> getSalesByCustomerName(String name) {
-        String sql = "SELECT * FROM goods LEFT JOIN customers on goods.customerID = customers.id WHERE customers.name = ?";
+        String sql = "SELECT * FROM goods LEFT JOIN customers ON goods.customerID = customers.id WHERE customers.name = ?";
         return jdbcTemplate.query(sql, new ItemMapper(), name);
     }
 }

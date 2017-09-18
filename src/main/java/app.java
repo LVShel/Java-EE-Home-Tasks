@@ -1,8 +1,6 @@
-
 import Service.GoodsService;
 import Service.SalesService;
 import config.SpringConfig;
-import entity.Item;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
@@ -33,26 +31,26 @@ public class app {
 //
 //        goodsService.save(myAnotherItem);
 
-        System.out.println("Items by merchant: " );
+        System.out.println("Items by merchant: ");
         goodsService.getByMerchant("Nike").forEach(System.out::println);
 
-        System.out.println("Items by name: " );
+        System.out.println("Items by name: ");
         goodsService.getByName("Shoes").forEach(System.out::println);
 
-        System.out.println("Items by price: " );
+        System.out.println("Items by price: ");
         goodsService.getByPrice(22).forEach(System.out::println);
 
         System.out.println("Sales by customer's age: ");
-        salesService.getSalesByAge(33).forEach(System.out::println);
+        salesService.getByAge(33).forEach(System.out::println);
 
         System.out.println("Sales by customers age range : ");
-        salesService.getSalesByAge(30, 50).forEach(System.out::println);
+        salesService.getByAge(30, 50).forEach(System.out::println);
 
         System.out.println("Sales by customer's ID : ");
-        salesService.getSalesByCustomerID(2).forEach(System.out::println);
+        salesService.getByCustomerID(2).forEach(System.out::println);
 
         System.out.println("Sales by customer's name : ");
-        salesService.getSalesByCustomerName("Ben").forEach(System.out::println);
+        salesService.getByCustomerName("Ben").forEach(System.out::println);
 
 
     }

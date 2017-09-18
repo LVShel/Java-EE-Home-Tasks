@@ -16,6 +16,4 @@ public interface SalesDao {
     List<Item> getSalesByCustomerID(int id);
 
     List<Item> getSalesByCustomerName(String name);
-
-
 }

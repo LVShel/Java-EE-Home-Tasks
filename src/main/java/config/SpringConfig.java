@@ -17,10 +17,14 @@ public class SpringConfig {
     }
 
     @Bean
-    public GoodsService getGoodsService(){ return  new GoodsServiceImpl();}
+    public GoodsService getGoodsService() {
+        return new GoodsServiceImpl();
+    }
 
     @Bean
-    public SalesService getSalesService(){return new SalesServiceImpl();}
+    public SalesService getSalesService() {
+        return new SalesServiceImpl();
+    }
 
     @Bean
     public CustomerDao getUserDaoImpl() {
@@ -33,7 +37,7 @@ public class SpringConfig {
     }
 
     @Bean
-    public ItemDao getItemDaoImpl(){
+    public ItemDao getItemDaoImpl() {
         DriverManagerDataSource dataSource = new DriverManagerDataSource();
         dataSource.setUrl("jdbc:mysql://localhost:3306/demo?verifyServerCertificate=false&useSSL=true");
         dataSource.setUsername("root");
@@ -43,7 +47,7 @@ public class SpringConfig {
     }
 
     @Bean
-    public SalesDao getSalesDaoImpl(){
+    public SalesDao getSalesDaoImpl() {
         DriverManagerDataSource dataSource = new DriverManagerDataSource();
         dataSource.setUrl("jdbc:mysql://localhost:3306/demo?verifyServerCertificate=false&useSSL=true");
         dataSource.setUsername("root");

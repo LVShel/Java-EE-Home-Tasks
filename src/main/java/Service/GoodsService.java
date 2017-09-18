@@ -7,7 +7,7 @@ import java.util.List;
 /**
  * Created by Home on 16.09.2017.
  */
-public interface GoodsService{
+public interface GoodsService {
 
     Item getById(int id);
 

@@ -15,10 +15,9 @@ public class GoodsServiceImpl implements GoodsService {
 
     @Override
     public Item getById(int id) {
-        if(id > 0){
+        if (id > 0) {
             return itemDao.getItemById(id);
-        }
-        else{
+        } else {
             System.out.println("Item ID must be positive number, bigger than zero!");
             return null;
         }
@@ -26,10 +25,9 @@ public class GoodsServiceImpl implements GoodsService {
 
     @Override
     public List<Item> getByName(String name) {
-        if(name.matches("[a-zA-Z]+") && name.length() <= 20){
+        if (name.matches("[a-zA-Z]+") && name.length() <= 20) {
             return itemDao.getItemsByName(name);
-        }
-        else{
+        } else {
             System.out.println("Item name can contain letters only!");
             return null;
         }
@@ -39,8 +37,7 @@ public class GoodsServiceImpl implements GoodsService {
     public List<Item> getByPrice(double price) {
         if (price > 0) {
             return itemDao.getItemsByPrice(price);
-        }
-        else{
+        } else {
             System.out.println("Item price cannot be less than 0!");
             return null;
         }
@@ -48,10 +45,9 @@ public class GoodsServiceImpl implements GoodsService {
 
     @Override
     public List<Item> getByMerchant(String merchant) {
-        if(merchant.matches("[a-zA-Z]+") && merchant.length() <= 20){
+        if (merchant.matches("[a-zA-Z]+") && merchant.length() <= 20) {
             return itemDao.getItemsByMerchant(merchant);
-        }
-        else{
+        } else {
             System.out.println("Item name can contain letters only!");
             return null;
         }
@@ -60,11 +56,10 @@ public class GoodsServiceImpl implements GoodsService {
     @Override
     public void save(Item item) {
         List<Item> foundItems = itemDao.findItems(item.getName(), item.getPrice());
-        if(foundItems.size() < 1){
+        if (foundItems.size() < 1) {
             itemDao.save(item);
             System.out.println("New Item stored in goods table");
-        }
-        else{
+        } else {
             System.out.println("This item already exists. It has been updated!");
             itemDao.update(item, foundItems.get(0).getId());
         }
@@ -82,7 +77,7 @@ public class GoodsServiceImpl implements GoodsService {
 
     @Override
     public List<Item> getAll() {
-       return itemDao.getAll();
+        return itemDao.getAll();
     }
 
     @Override

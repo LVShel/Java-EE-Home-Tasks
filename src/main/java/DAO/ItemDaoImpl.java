@@ -79,7 +79,8 @@ public class ItemDaoImpl implements ItemDao {
         jdbcTemplate.update(sql, name);
 
     }
-    public List<Item> findItems(String name, double price){
+
+    public List<Item> findItems(String name, double price) {
         String sql = "SELECT * FROM goods WHERE name = ? AND price = ?";
         return jdbcTemplate.query(sql, new ItemMapper(), name, price);
     }

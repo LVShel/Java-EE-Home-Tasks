@@ -11,21 +11,21 @@ public interface GoodsService{
 
     Item getById(int id);
 
-    Item getByName(String name);
+    List<Item> getByName(String name);
 
-    Item getByPrice(double price);
+    List<Item> getByPrice(double price);
 
-    Item getByMerchant(String merchant);
+    List<Item> getByMerchant(String merchant);
 
-    public void save(Item item);
+    void save(Item item);
 
-    public void update(Item newItem);
+    void update(Item newItem);
 
-    public void update(Item newItem, int id);
+    void update(Item newItem, int id);
 
-    public List<Item> getAll();
+    List<Item> getAll();
 
-    public void delete(int id);
+    void delete(int id);
 
-    public void delete(String name);
+    void delete(String name);
 }

@@ -30,21 +30,21 @@ public class ItemDaoImpl implements ItemDao {
     }
 
     @Override
-    public Item getItemByName(String name) {
+    public List<Item> getItemsByName(String name) {
         String sql = "SELECT * FROM goods WHERE name = ?";
-        return jdbcTemplate.queryForObject(sql, new ItemMapper(), name);
+        return jdbcTemplate.query(sql, new ItemMapper(), name);
     }
 
     @Override
-    public Item getItemByPrice(double price) {
+    public List<Item> getItemsByPrice(double price) {
         String sql = "SELECT * FROM goods WHERE price = ?";
-        return jdbcTemplate.queryForObject(sql, new ItemMapper(), price);
+        return jdbcTemplate.query(sql, new ItemMapper(), price);
     }
 
     @Override
-    public Item getItemByMerchant(String merchant) {
+    public List<Item> getItemsByMerchant(String merchant) {
         String sql = "SELECT * FROM goods WHERE merchant = ?";
-        return jdbcTemplate.queryForObject(sql, new ItemMapper(), merchant);
+        return jdbcTemplate.query(sql, new ItemMapper(), merchant);
     }
 
     @Override
@@ -79,7 +79,7 @@ public class ItemDaoImpl implements ItemDao {
         jdbcTemplate.update(sql, name);
 
     }
-    public List<Item> findItem(String name, double price){
+    public List<Item> findItems(String name, double price){
         String sql = "SELECT * FROM goods WHERE name = ? AND price = ?";
         return jdbcTemplate.query(sql, new ItemMapper(), name, price);
     }

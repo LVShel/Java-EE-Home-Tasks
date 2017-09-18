@@ -12,11 +12,11 @@ public interface ItemDao {
 
     Item getItemById(int id);
 
-    Item getItemByName(String name);
+    List<Item> getItemsByName(String name);
 
-    Item getItemByPrice(double price);
+    List<Item> getItemsByPrice(double price);
 
-    Item getItemByMerchant(String merchant);
+    List<Item> getItemsByMerchant(String merchant);
 
     void update(Item newItem);
 
@@ -28,6 +28,6 @@ public interface ItemDao {
 
     void delete(String name);
 
-    public List<Item> findItem(String name, double price);
+    List<Item> findItems(String name, double price);
 
 }

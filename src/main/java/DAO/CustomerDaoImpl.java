@@ -1,6 +1,6 @@
 package DAO;
 
-import Mappers.UserMapper;
+import Mappers.CustomerMapper;
 import entity.Customer;
 import org.springframework.jdbc.core.JdbcTemplate;
 
@@ -26,7 +26,7 @@ public class CustomerDaoImpl implements CustomerDao {
     @Override
     public Customer getUserById(int id) {
         String sql = "SELECT * FROM customers WHERE id=?";
-        return jdbcTemplate.queryForObject(sql, new UserMapper(), id);
+        return jdbcTemplate.queryForObject(sql, new CustomerMapper(), id);
     }
 
     @Override
@@ -40,7 +40,7 @@ public class CustomerDaoImpl implements CustomerDao {
     @Override
     public List<Customer> getAll() {
         String sql = "SELECT * FROM customers";
-        return jdbcTemplate.query(sql, new UserMapper());
+        return jdbcTemplate.query(sql, new CustomerMapper());
     }
 
     @Override

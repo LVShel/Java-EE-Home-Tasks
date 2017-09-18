@@ -25,9 +25,9 @@ public class GoodsServiceImpl implements GoodsService {
     }
 
     @Override
-    public Item getByName(String name) {
+    public List<Item> getByName(String name) {
         if(name.matches("[a-zA-Z]+") && name.length() <= 20){
-            return itemDao.getItemByName(name);
+            return itemDao.getItemsByName(name);
         }
         else{
             System.out.println("Item name can contain letters only!");
@@ -36,9 +36,9 @@ public class GoodsServiceImpl implements GoodsService {
     }
 
     @Override
-    public Item getByPrice(double price) {
+    public List<Item> getByPrice(double price) {
         if (price > 0) {
-            return itemDao.getItemByPrice(price);
+            return itemDao.getItemsByPrice(price);
         }
         else{
             System.out.println("Item price cannot be less than 0!");
@@ -47,9 +47,9 @@ public class GoodsServiceImpl implements GoodsService {
     }
 
     @Override
-    public Item getByMerchant(String merchant) {
+    public List<Item> getByMerchant(String merchant) {
         if(merchant.matches("[a-zA-Z]+") && merchant.length() <= 20){
-            return itemDao.getItemByMerchant(merchant);
+            return itemDao.getItemsByMerchant(merchant);
         }
         else{
             System.out.println("Item name can contain letters only!");
@@ -59,7 +59,7 @@ public class GoodsServiceImpl implements GoodsService {
 
     @Override
     public void save(Item item) {
-        List<Item> foundItems = itemDao.findItem(item.getName(), item.getPrice());
+        List<Item> foundItems = itemDao.findItems(item.getName(), item.getPrice());
         if(foundItems.size() < 1){
             itemDao.save(item);
             System.out.println("New Item stored in goods table");

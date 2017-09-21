@@ -2,5 +2,5 @@
     <input title="Name" type="text" name="name"/>
     <input title="price" type="number" name="price"/>
     <input title="merchant" type="text" name="merchant"/>
-    <input type="submit" title="OK" value="OK!"/>
+    <input type="submit" title="OK" value="Save"/>
 </form>

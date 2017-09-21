@@ -14,6 +14,7 @@
             <th>Name</th>
             <th>Price</th>
             <th>Merchant</th>
+
         </tr>
     <#list items as item>
         <tr>
@@ -21,6 +22,12 @@
             <td>${item.name}</td>
             <td>${item.price}</td>
             <td>${item.merchant}</td>
+            <td>
+                <form action="/deleteItem/{id}" method="post" name="item" class="form-group">
+                    <input title="id" type="hidden" name="id" value="${item.id}"/>
+                    <input type="submit" title="OK" value="Delete"/>
+                </form>
+            </td>
         </tr>
     </#list>
     </table>

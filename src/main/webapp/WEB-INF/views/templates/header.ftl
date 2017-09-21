@@ -17,4 +17,4 @@
             <li class="active"><a href="/items">Items</a></li>
         </ul>
     </div>
-</nav>items">Items</a>
+</nav>

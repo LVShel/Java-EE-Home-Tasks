@@ -7,7 +7,8 @@
 <body class="container">
 <#include "WEB-INF/views/templates/header.ftl">
 <div class="container">
-    <h1>The best app ever!</h1>
+    <h1>SPORT STORE</h1>
 </div>
 </body>
 </html>
+

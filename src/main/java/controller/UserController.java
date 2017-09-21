@@ -1,14 +1,11 @@
 package controller;
 
-import entity.Customer;
 import entity.Item;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
-import service.CustomerService;
 import service.GoodsService;
-import service.SalesService;
 
 /**
  * Created by Home on 19.09.2017.
@@ -41,5 +38,11 @@ public class UserController {
     public String createItem(@ModelAttribute Item item) {
         goodsService.save(item);
         return "redirect:items";
+    }
+
+    @PostMapping (value="/deleteItem/{id}")
+    public String deleteItem(@ModelAttribute Item item) {
+        goodsService.delete(item.getId());
+        return "redirect:/items";
     }
 }

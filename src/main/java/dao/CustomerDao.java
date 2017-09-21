@@ -13,11 +13,15 @@ public interface CustomerDao {
 
     Customer getUserById(int id);
 
-    Customer update(Customer newCustomer);
+    void update(Customer newCustomer);
+
+    void update(Customer customer, int id);
 
     List<Customer> getAll();
 
     void delete(int id);
 
     void delete(String name);
+
+    List<Customer> findCustomers(String name, int age);
 }

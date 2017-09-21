@@ -1,7 +1,7 @@
 package dao;
 
-import mappers.CustomerMapper;
 import entity.Customer;
+import mappers.CustomerMapper;
 import org.springframework.jdbc.core.JdbcTemplate;
 
 import javax.sql.DataSource;
@@ -30,11 +30,15 @@ public class CustomerDaoImpl implements CustomerDao {
     }
 
     @Override
-    public Customer update(Customer newCustomer) {
+    public void update(Customer newCustomer) {
         String sql = "UPDATE customers SET name=?, email=?, age=? WHERE id=?";
         int update = jdbcTemplate.update(sql, newCustomer.getName(), newCustomer.getEmail(), newCustomer.getAge(), newCustomer.getId());
-        System.out.println("return + " + update);
-        return null;
+    }
+
+    @Override
+    public void update(Customer newCustomer, int id) {
+        String sql = "UPDATE customers SET name=?, email=?, age=? WHERE id=?";
+        int update = jdbcTemplate.update(sql, newCustomer.getName(), newCustomer.getEmail(), newCustomer.getAge(), id);
     }
 
     @Override
@@ -53,5 +57,11 @@ public class CustomerDaoImpl implements CustomerDao {
     public void delete(String name) {
         String sql = "DELETE FROM customers WHERE name=?";
         jdbcTemplate.update(sql, name);
+    }
+
+    @Override
+    public List<Customer> findCustomers(String name, int age) {
+        String sql = "SELECT * FROM customers WHERE name = ? AND age = ?";
+        return jdbcTemplate.query(sql, new CustomerMapper(), name, age);
     }
 }
